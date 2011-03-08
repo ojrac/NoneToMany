@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>None to Many</title>
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> we need a good one! -->
+</head>
+<body>
+    <div id="main">
+        <h2>Say hello</h2>
+        <div id="log">
+            <div>Ask a question</div>
+        </div>
+            <form id="question">
+            <input type="text" id="q">
+            <input type="submit" value="Ask">
+        </form>
+    </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script>
+function append(src, str) {
+    $('#log').append("<div><b>" + src + ":</b> " + str + "</div>");
+}
+$("#question").submit(function (evt) {
+    evt.preventDefault();
+    var q = $('#q').val();
+    if (!q) {
+        return;
+    }
+    
+    append("You", q);
+    $.ajax({
+        url: "/eliza/ask",
+        dataType: 'html',
+        data: { q: q },
+        success: function(result) {
+            append("HubSpot", result);
+    }});
+    $('#q').val('');
+});
+</script>
+</body>
+</html>
