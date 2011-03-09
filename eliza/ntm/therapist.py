@@ -230,6 +230,10 @@ gPats = [
     [   "Do you think there is %s?",
         "It's likely that there is %s.",
         "Would you like there to be %s?"]],
+    ["My greatest marketing challenge is (?P<challenge>.*) my (?P<where>blog|website|garage)",
+            [   "Have you tried shutting down your %(where)s?",
+                "Maybe you can't %(challenge)s because your %(where)s stinks."
+                ]],
     
     ["My (.*)",
     [   "I see, your %s.",
@@ -282,6 +286,7 @@ gPats = [
     [   "Thank you for talking with me.",
         "Good-bye.",
         "Thank you, that will be $150.  Have a good day!"]],
+
     
     ["(.*)",
     [   "Please tell me more.",
