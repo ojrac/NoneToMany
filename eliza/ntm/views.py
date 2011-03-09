@@ -17,5 +17,6 @@ def ask(request):
     else:
         answer = therapist.answer(question)
 
-    return render_to_response('question.html', {'answer': answer})
+    return render_to_response('question.html',
+            {'answer': answer, 'question': question})
 
