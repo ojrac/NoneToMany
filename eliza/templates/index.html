@@ -28,7 +28,7 @@ var eliza = {
         }
         eliza.appendMsg("You", question);
         $.ajax({
-            url: "/eliza/ask",
+            url: "/eliza/ask/{{ uuid }}/",
             dataType: 'html',
             data: { q: question },
             success: function(result) {

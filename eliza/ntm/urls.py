@@ -5,6 +5,6 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', 'eliza.ntm.views.index'),
-    (r'^ask$', 'eliza.ntm.views.ask'),
+    (r'^ask/(?P<conversation_uuid>[-a-zA-Z0-9]{36})/?$', 'eliza.ntm.views.ask'),
 )
 

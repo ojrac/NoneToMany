@@ -1,16 +1,17 @@
 # Create your views here.
 from django.shortcuts import render_to_response
-from django.http import HttpResponseRedirect
-from django.core.urlresolvers import reverse
-from django.template import RequestContext
 
+import uuid
+
+from models import Conversation, Exchange
 import therapist
 
 def index(request):
+    conversation_uuid = uuid.uuid4()
     return render_to_response('index.html',
-            context_instance=RequestContext(request))
+            {'uuid': conversation_uuid})
 
-def ask(request):
+def ask(request, conversation_uuid):
     question = request.GET.get('q', None)
     if not question:
         answer = "Ask a question!"
