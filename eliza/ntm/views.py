@@ -9,7 +9,7 @@ import therapist
 def index(request):
     conversation_uuid = uuid.uuid4()
     return render_to_response('index.html',
-            {'uuid': conversation_uuid})
+            {'uuid': str(conversation_uuid)})
 
 def ask(request, conversation_uuid):
     question = request.GET.get('q', None)
