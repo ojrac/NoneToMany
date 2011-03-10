@@ -18,25 +18,33 @@
     </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script>
-function append(src, str) {
-    $('#log').append("<div><b>" + src + ":</b> " + str + "</div>");
-}
-$("#question").submit(function (evt) {
-    evt.preventDefault();
-    var q = $('#q').val();
-    if (!q) {
-        return;
+var eliza = {
+    appendMsg: function(speaker, message) {
+        $('#log').append("<div><b>" + speaker + ":</b> " + message + "</div>");
+    },
+    ask: function(question) {
+        if (!question) {
+            return;
+        }
+        eliza.appendMsg("You", question);
+        $.ajax({
+            url: "/eliza/ask",
+            dataType: 'html',
+            data: { q: question },
+            success: function(result) {
+                eliza.appendMsg("HubSpot", result);
+            }, error: function(result) {
+                eliza.appendMsg("Error", result.responseText);
+            }
+        });
     }
-    
-    append("You", q);
-    $.ajax({
-        url: "/eliza/ask",
-        dataType: 'html',
-        data: { q: q },
-        success: function(result) {
-            append("HubSpot", result);
-    }});
-    $('#q').val('');
+};
+$(window).load(function() {
+    $('#q').val('').focus();
+    $("#question").submit(function (evt) {
+        evt.preventDefault();
+        eliza.ask($('#q').val());
+    });
 });
 </script>
 </body>
