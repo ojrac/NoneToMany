@@ -44,6 +44,7 @@ $(window).load(function() {
     $("#question").submit(function (evt) {
         evt.preventDefault();
         eliza.ask($('#q').val());
+        $('#q').val('');
     });
 });
 </script>
