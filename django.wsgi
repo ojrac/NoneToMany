@@ -1,8 +1,8 @@
 import os
 import sys
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'eliza.settings'
-sys.path.insert(0, '/var/www/django')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+sys.path.insert(0, '/var/www/django/eliza')
 
 # This has to be done here otherwise Django won't be in a directory
 # that's in PYTHONPATH.
