@@ -1,5 +1,7 @@
 # Django settings for eliza project.
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -82,7 +84,7 @@ TEMPLATE_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     "/var/www/django/eliza/templates",
-    "/Users/Owen/Documents/code/nonetomany/eliza/templates",
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
 )
 
 INSTALLED_APPS = (
