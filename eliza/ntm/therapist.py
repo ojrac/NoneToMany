@@ -113,16 +113,13 @@ gPats = [
         "Do you really need to %s, or could you blog more?",
         "Perhaps you could %s if your content were fresher and more relevant?"]],
     
-    ["I am (.*)",
-    [   "All right, is it HubSpot's fault that you are %s?",
-        "Would you still be %s if you upgraded to large?",
-        "We just received investment from Sequoia, Google, and SalesForce.  Are you still %s?"]],
+    ["I( a|')m (?P<thing>.*)",
+    [   "All right, is it HubSpot's fault that you are %(thing)s?",
+        "Would you still be %(thing)s if you upgraded to large?",
+        "We just received investment from Sequoia, Google, and SalesForce.  Are you still %(thing)s?"]],
+    [".*marketing kit.*",
+        ["What did you think of our marketing kit?"]],
     
-    ["I'm (.*)",
-    [   "All right, is it HubSpot's fault that you are %s?",
-        "Would you still be %s if you upgraded to large?",
-        "We just received investment from Sequoia, Google, and SalesForce.  Are you still %s?"]],
-
     ["I'm not sure my portal has enough capacity.",
       ["That's what she said."]],
 
@@ -162,10 +159,9 @@ gPats = [
         "Do you really think so?",
         "But you're not sure %s?"]],
     
-    ["(.*) friend(.*)",
-    [   "Tell me more about your friends.",
-        "When you think of a friend, what comes to mind?",
-        "Why don't you tell me about a childhood friend?"]],
+    ["(.*) blog (.*)",
+    [   "Tell me more about your experience with blogging.",
+        "When you think of a blog, what comes to mind?",]],
     
     ["Yes",
     [   "You seem quite sure.",
@@ -189,7 +185,7 @@ gPats = [
     
     ["Can you (.*)",
     [   "What makes you think I can't %s?",
-        "If I could %s, then what?",
+        "I can't %s for you, but have you checked on http://services.hubspot.com/?",
         "Why do you ask if I can %s?"]],
     
     ["Can I (.*)",
@@ -233,9 +229,9 @@ gPats = [
     [   "Do you think there is %s?",
         "It's likely that there is %s.",
         "Would you like there to be %s?"]],
-    ["My greatest marketing challenge is (?P<challenge>.*) my (?P<where>blog|website|garage)",
+    ["My greatest marketing challenge is (?P<challenge>.*) my (?P<where>.*)",
             [   "Have you tried shutting down your %(where)s?",
-                "Maybe you can't %(challenge)s because your %(where)s stinks."
+                "Maybe you're having trouble with %(challenge)s because your %(where)s stinks.",
                 ]],
     
     ["My (.*)",
@@ -258,12 +254,15 @@ gPats = [
         "What would you do if you got %s?",
         "If you got %s, then what would you do?"]],
     
+    ["(.*) keyword(.*)",
+    [   "How do you keep track of your best keywords?",
+        "Which keywords convert to sales leads more often?"]],
     ["(.*) mother(.*)",
     [   "Tell me more about your mother.",
         "What was your relationship with your mother like?",
         "How do you feel about your mother?",
         "How does this relate to your feelings today?",
-        "Good family relations are important."]],
+        "Oh, I know all about your mother."]],
     
     ["(.*) father(.*)",
     [   "Tell me more about your father.",
@@ -285,7 +284,7 @@ gPats = [
         "Perhaps the answer lies within yourself?",
         "Why don't you tell me?"]],
     
-    ["quit",
+    ["quit|exit",
     [   "Thank you for talking with me.",
         "Good-bye.",
         "Thank you, that will be $150.  Have a good day!"]],
@@ -293,11 +292,12 @@ gPats = [
     
     ["(.*)",
     [   "Please tell me more.",
-        "Let's change focus a bit... Tell me about your family.",
+        "Let's change the subject. How do you reach your target customers?",
         "Can you elaborate on that?",
         "Why do you say that %s?",
         "I see.",
         "Very interesting.",
+        "You might like to attend one of our group demos.",
         "%s.",
         "I see.  And what does that tell you?",
         "How does that make you feel?",
