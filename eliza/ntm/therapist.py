@@ -288,7 +288,7 @@ gPats = [
     ["I am interested in (.*)\.",
      ["Have you considered attending one of our webinars on the science of %s?"]],
 
-    ["(.*) Zarrella (.*)",
+    [".*Zarrella.*",
      ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
 
     ["(.*)\?",
