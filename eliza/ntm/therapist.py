@@ -145,6 +145,15 @@ gPats = [
     [   "Oubtound marketers %s--Inbound Marketers blog about it.  Don't you agree?",
         "HubSpot has plans to %s in the first quarter of next year.  Can I help you with anything else?",
         "Do you really want me to %s, or do you just want more leads quicker?"]],
+
+    ["(.* )?dude.*",
+    [   "Dude?",
+        "Dude!",
+        "Dude!!!",
+        "Dude...",
+        "Dude?!",
+        "Dude."]],
+
     
     ["Why can't I (.*)",
     [   "How would your marketing activities really change if you could %s?",
@@ -233,14 +242,6 @@ gPats = [
     [".* beta.*",
     [   "Fuck 'em. We're in beta!",
         "PageGrader has been upgraded from beta to omega recently; does that help?"]],
-
-    [".* dude.*",
-    [   "Dude?",
-        "Dude!",
-        "Dude!!!",
-        "Dude...",
-        "Dude?!",
-        "Dude."]],
 
     ["Are you the optimizer?",
     [   "Yes."]],
