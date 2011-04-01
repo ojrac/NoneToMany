@@ -22,6 +22,10 @@ DATABASES = {
     }
 }
 
+# Dirty hack to smooth out server
+if os.path.exists('/etc/hubspot-base-image'):
+    DATABASES['default']['NAME'] = '/usr/share/hubspot/webapps/eliza/eliza/eliza.sqlite'
+
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
