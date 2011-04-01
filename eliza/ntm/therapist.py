@@ -21,15 +21,30 @@ def translate(word, mapping):
             words[i] = mapping[words[i]]
     return string.join(words)
 
+# Map from exchange size -> specific question
+gpct_questions = {
+    1: ["Okay, let's get started.  How would you describe your marketing goals?"],
+    4: ["Let's talk about developing a plan"],
+    8: ["What are the challenges facing you and your business?"],
+    11: ["Do you feel like you'll have time to create content?"],
+    }
+
 #----------------------------------------------------------------------
 #   respond: take a string, a set of regexps, and a corresponding
 #       set of response lists; find a match, and return a randomly
 #       chosen response from the corresponding list.
 #----------------------------------------------------------------------
-def respond(question, patterns, formats):
+def respond(question, conversation, patterns, formats):
     """Test a question against a set of patterns, and apply the first
-    matching substitution
+    matching substitution.
+
+    The conversation is a model object for the history of questions and
+    answers.
     """
+    q_num = conversation.num_exchanges() + 1  # 1-indexed
+    if q_num in  gpct_questions:
+        return random.choice(gpct_questions[q_num])
+    
     for pattern, substitution in zip(patterns, formats):
         match = pattern.match(question)
         if not match:
@@ -91,6 +106,15 @@ G_REFLECTIONS = {
 #   list of possible responses, with standard format strings
 #----------------------------------------------------------------------
 gPats = [
+
+    ["What\??",
+     ["I'm sorry. Maybe we should back up a bit. How does this fit into your overall marketing strategy?"]
+     ],
+    
+    ["Okay\.?",
+     ["Good. What's your take?"]
+     ],
+    
     [".* Zarrella.*",
      ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
 
@@ -313,12 +337,12 @@ gPats = [
     [".* keyword .*",
     [   "How do you keep track of your best keywords?",
         "Which keywords convert to sales leads more often?"]],
-    
-    ["I'm interested in learning more about (.*)\.",
-     ["Have you considered attending one of our webinars on the science of %s?"]],
 
-    ["I am interested in learning more about (.*)\.",
-     ["Have you considered attending one of our webinars on the science of %s?"]],   
+    [".* learn(ing)?( more)? about (?P<subject>.*)",
+     ["Have you considered attending one of our webinars on the science of %(subject)s?"]],
+    
+    ["I( a|')m interested in learning more about (.*)\.",
+     ["Have you considered attending one of our webinars on the science of %s?"]],
 
     ["I am interested in (.*)\.",
      ["Have you considered attending one of our webinars on the science of %s?"]],   
@@ -362,9 +386,9 @@ END_PUNCTUATION_RE = re.compile('[\.!?]+$')
 def strip_punctuation(question):
     return END_PUNCTUATION_RE.sub('', question)
 
-def answer(question):
+def answer(question, conversation):
     question = strip_punctuation(question)
-    return respond(question, G_KEYS, G_VALUES)
+    return respond(question, conversation, G_KEYS, G_VALUES)
     
 def main():
     print "Therapist\n---------"

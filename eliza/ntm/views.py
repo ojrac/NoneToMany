@@ -15,12 +15,11 @@ def index(request):
 
 def ask(request, conversation_uuid):
     question = request.GET.get('q', None)
+    c = Conversation.objects.get(guid=conversation_uuid)
     if not question:
         answer = "Ask a question!"
     else:
-        answer = therapist.answer(question)
-
-        c = Conversation.objects.get(guid=conversation_uuid)
+        answer = therapist.answer(question, c)
         c.exchange_set.create(question=question, answer=answer)
 
     return render_to_response('question.html',
