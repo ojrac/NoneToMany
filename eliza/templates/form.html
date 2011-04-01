@@ -1,0 +1,4 @@
+<form{% if class %} class="{{ class }}"{% endif %}{% if action %} action="{{ action }}"{% endif %}{% if method %} method="{{ method }}"{% endif %}{% if width %} style="width:{{ width }}px"{% endif %} accept-charset="UTF-8" enctype="{{ enctype }}" {% if id %} id="{{ id }}{% endif %}">
+{% if header %}<h2>{{ header }}</h2>{% endif %}
+{% if description %}<p>{{ description }}</p>{% endif %}
+{{ nested }}</form>
