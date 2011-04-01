@@ -91,6 +91,16 @@ G_REFLECTIONS = {
 #   list of possible responses, with standard format strings
 #----------------------------------------------------------------------
 gPats = [
+
+    [".*Twitter.*",
+     ["Twitter can be a very important tool for inbound marketing if it's not overused.  Can you describe your current social strategy?"]],
+    
+    [".*Facebook.*",
+     ["Facebook can be a very important tool for inbound marketing if it's not overused.  Can you describe your current social strategy?"]],
+
+    [".* email grader.*",
+     ["Email grader is currently our top priority.  How might you use it?"]],
+    
     ["I need (.*)",
     [   "Have you tried creating %s yourself with your APIs?",
         "Would %s help you generate inbound leads?",
@@ -117,6 +127,7 @@ gPats = [
     [   "All right, is it HubSpot's fault that you are %(thing)s?",
         "Would you still be %(thing)s if you upgraded to large?",
         "We just received investment from Sequoia, Google, and SalesForce.  Are you still %(thing)s?"]],
+    
     [".*marketing kit.*",
         ["What did you think of our marketing kit?"]],
     
@@ -135,43 +146,35 @@ gPats = [
         "What do you think?"]],
     
     ["How can I (.*)",
-    [   "How do you suppose?",
+    [   "Have you read Inbound Marketing by our co-founders?",
         "Perhaps you can answer your own question.",
         "What is it you're really asking?"]],
     
     ["because (.*)",
-    [   "Is that the real reason?",
-        "What other reasons come to mind?",
-        "Does that reason apply to anything else?",
+    [   "Does that reason apply to anything else in your funnel?",
         "If %s, what else must be true?"]],
     
-    ["(.*) sorry (.*)",
+    [".*sorry.*",
     [   "There are many times when no apology is needed.",
-        "What feelings do you have when you apologize?"]],
+        "The best way to stop feeling sorry is to apologize with fresh content."]],
     
     ["(?:hello|hi)(.*)",
     [   "Hello... I'm glad you could drop by today.",
         "Hi there... how are you today?",
-        "Hello, how are you feeling today?"]],
+        "Hi, have you accepted inbound marketing as the path to truth and justice?"]],
     
     ["I think (.*)",
-    [   "Do you doubt %s?",
-        "Do you really think so?",
-        "But you're not sure %s?"]],
+    [   "Are you confident enough to do an A/B test?",
+        "So you're saying you're not data driven?",
+        "Many of our customers thought that before they upgraded to large."]],
     
-    ["(.*) blog (.*)",
+    [".*blog.*",
     [   "Tell me more about your experience with blogging.",
-        "When you think of a blog, what comes to mind?",]],
+        "When you think of a blog, what comes to mind?"]],
     
     ["Yes",
     [   "You seem quite sure.",
         "OK, but can you elaborate a bit?"]],
-    
-    ["(.*) computer(.*)",
-    [   "Are you really talking about me?",
-        "Does it seem strange to talk to a computer?",
-        "How do computers make you feel?",
-        "Do you feel threatened by computers?"]],
     
     ["Is it (.*)",
     [   "Do you think it is %s?",
@@ -184,9 +187,8 @@ gPats = [
         "If I told you that it probably isn't %s, what would you feel?"]],
     
     ["Can you (.*)",
-    [   "What makes you think I can't %s?",
-        "I can't %s for you, but have you checked on http://services.hubspot.com/?",
-        "Why do you ask if I can %s?"]],
+    [   "%s is much easier with an inbound methodology, don't you think?",
+        "I can't %s for you, but have you checked on http://services.hubspot.com/?"]],
     
     ["Can I (.*)",
     [   "Perhaps you don't want to %s.",
@@ -229,6 +231,7 @@ gPats = [
     [   "Do you think there is %s?",
         "It's likely that there is %s.",
         "Would you like there to be %s?"]],
+    
     ["My greatest marketing challenge is (?P<challenge>.*) my (?P<where>.*)",
             [   "Have you tried shutting down your %(where)s?",
                 "Maybe you're having trouble with %(challenge)s because your %(where)s stinks.",
@@ -236,8 +239,8 @@ gPats = [
     
     ["My (.*)",
     [   "I see, your %s.",
-        "Why do you say that your %s?",
-        "When your %s, how do you feel?"]],
+        "Have you posted to Facebook that your %s?",
+        "When your %s, how does that affect your ROI?"]],
     
     ["You (.*)",
     [   "We should be discussing you, not me.",
@@ -247,48 +250,68 @@ gPats = [
     ["Why (.*)",
     [   "Why don't you tell me the reason why %s?",
         "Why do you think %s?" ]],
+
+    ["Are you a computer?",
+    [   "No."]],
+    
+    ["Are you a human being?",
+    [   "Yes."]],
         
+    ["Are you a real person?",
+    [   "Yes."]],
+
     ["I want (.*)",
     [   "What would it mean to you if you got %s?",
         "Why do you want %s?",
         "What would you do if you got %s?",
         "If you got %s, then what would you do?"]],
+
+    [".* bing.*",
+     ["The concept of SEO rank is of decreasing value.  Is your general keyword traffic going up?"]],
+
+    [".*Google.*",
+     ["The concept of SEO rank is of decreasing value.  Is your general keyword traffic going up?"]],
     
-    ["(.*) keyword(.*)",
+    [".* keyword .*",
     [   "How do you keep track of your best keywords?",
         "Which keywords convert to sales leads more often?"]],
-    ["(.*) mother(.*)",
-    [   "Tell me more about your mother.",
-        "What was your relationship with your mother like?",
-        "How do you feel about your mother?",
-        "How does this relate to your feelings today?",
-        "Oh, I know all about your mother."]],
     
-    ["(.*) father(.*)",
-    [   "Tell me more about your father.",
-        "How did your father make you feel?",
-        "How do you feel about your father?",
-        "Does your relationship with your father relate to your feelings today?",
-        "Do you have trouble showing affection with your family?"]],
+    ["I'm interested in learning more about (.*)\.",
+     ["Have you considered attending one of our webinars on the science of %s?"]],
 
-    ["(.*) child(.*)",
-    [   "Did you have close friends as a child?",
-        "What is your favorite childhood memory?",
-        "Do you remember any dreams or nightmares from childhood?",
-        "Did the other children sometimes tease you?",
-        "How do you think your childhood experiences relate to your feelings today?"]],
-        
+    ["I am interested in learning more about (.*)\.",
+     ["Have you considered attending one of our webinars on the science of %s?"]],   
+
+    ["I am interested in (.*)\.",
+     ["Have you considered attending one of our webinars on the science of %s?"]],   
+    
+    ["I am interested in (.*)\.",
+     ["Have you considered attending one of our webinars on the science of %s?"]],
+
+    [".*Zarrella.*",
+     ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
+
     ["(.*)\?",
     [   "Why do you ask that?",
         "Please consider whether you can answer your own question.",
-        "Perhaps the answer lies within yourself?",
-        "Why don't you tell me?"]],
-    
+        "Have you tried to answer your question in our extensive documentation?"]],
+
     ["quit|exit",
     [   "Thank you for talking with me.",
         "Good-bye.",
-        "Thank you, that will be $150.  Have a good day!"]],
+        "Remember, only stupid people use outbound marketing.  Have a good day!"]],
 
+    [r"(.*)\.",
+    [   "Please tell me more.",
+        "Let's change the subject. How do you reach your target customers?",
+        "Can you elaborate on that?",
+        "Why do you say '%s'?",
+        "I see.",
+        "Very interesting.",
+        "You might like to attend one of our group demos.",
+        "%s?",
+        "I see.  And what does that tell you?",
+        "Let's attach this from another angle.  Do you blog?"]],
     
     ["(.*)",
     [   "Please tell me more.",
@@ -298,10 +321,7 @@ gPats = [
         "I see.",
         "Very interesting.",
         "You might like to attend one of our group demos.",
-        "%s.",
-        "I see.  And what does that tell you?",
-        "How does that make you feel?",
-        "How do you feel when you say that?"]]
+        "Let's attach this from another angel.  Do you blog?"]]
     ]
 
 #----------------------------------------------------------------------
