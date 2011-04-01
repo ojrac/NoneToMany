@@ -100,7 +100,7 @@ $(window).load(function() {
     $("#question .btn").click(function (evt) {
         evt.preventDefault();
         eliza.ask($('#q').val());
-        $('#q').val('');
+        $('#q').val('').focus();
     });
     $("#question").submit(function (evt) {
         evt.preventDefault();
