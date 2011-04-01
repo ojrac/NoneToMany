@@ -109,7 +109,7 @@ gPats = [
         "There's no one right way to do anything.  For instance, how do you generate leads now?"]],
 
     [".* help.*",
-    [   "Over 98% of calls that come in to Support are picked up by a Human.  It's a great resource and I really encourage you to take advantage of it."]
+    [   "Over 98% of calls that come in to Support are picked up by a Human.  It's a great resource and I really encourage you to take advantage of it."]],
     
     ["I need (.*)",
     [   "Have you tried creating %s yourself with your APIs?",
@@ -144,11 +144,11 @@ gPats = [
         ["What did you think of our marketing kit?"]],
 
     [".* leads.*",
-    [   "You have to include multiple conversion opportunities in your marketing machine.  At HubSpot we generate leads from MANY sources including organic search, ppc, blog, graders and email."],
+    [   "You have to include multiple conversion opportunities in your marketing machine.  At HubSpot we generate leads from MANY sources including organic search, ppc, blog, graders and email."]],
     
     [".* link.*",
     [   "Your link building strategy should start with a content creation strategy.  People aren't going to want to link to uninteresting content.  Remember the line from Field of Dreams...  \"If you build it, they will come\".",
-        "You aren't trying to rank for 'click here.'  So remember the importance of keyword friendly anchor text in links throughout your site."],
+        "You aren't trying to rank for 'click here.'  So remember the importance of keyword friendly anchor text in links throughout your site."]],
 
     ["I'm not sure my portal has enough capacity.",
       ["That's what she said."]],
@@ -208,7 +208,7 @@ gPats = [
 
     [".* beta.*",
     [   "Fuck 'em. We're in beta!",
-        "PageGrader has been upgraded from beta to omega recently; does that help?"],
+        "PageGrader has been upgraded from beta to omega recently; does that help?"]],
 
     [".* dude.*",
     [   "Dude?",
@@ -216,7 +216,7 @@ gPats = [
         "Dude!!!",
         "Dude...",
         "Dude?!",
-        "Dude."],
+        "Dude."]],
 
     ["Are you the optimizer?",
     [   "Yes."]],
