@@ -244,6 +244,8 @@ gPats = [
 
     ["Are you the optimizer?",
     [   "Yes."]],
+    ["Do you take (discover|cash|check|credit|american express|visa|master ?card)[?]?",
+    [   "Yes."]],
     
     ["Can you (.*)",
     [   "%s is much easier with an inbound methodology, don't you think?",
