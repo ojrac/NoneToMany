@@ -133,7 +133,7 @@ gPats = [
         "There's no one right way to do anything.  For instance, how do you generate leads now?"]],
 
     [".* help.*",
-    [   "Over 98% of calls that come in to Support are picked up by a Human.  It's a great resource and I really encourage you to take advantage of it."]],
+    [   "Over 98%% of calls that come in to Support are picked up by a Human.  It's a great resource and I really encourage you to take advantage of it."]],
     
     ["I need (.*)",
     [   "Have you tried creating %s yourself with your APIs?",
