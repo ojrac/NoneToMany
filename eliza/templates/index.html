@@ -1,26 +1,75 @@
 <!doctype html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>None to Many</title>
-    <!-- <link rel="shortcut icon" href="/favicon.ico"> we need a good one! -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>HubSpot | None to Many</title>
+  <!-- <link rel="shortcut icon" href="/favicon.ico"> we need a good one! -->
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;" />
+  <link type="text/css" rel="stylesheet" href="//static.hubspotqa.com/bundles/final_page.css?v=3dJ3aaG609chjjHlRKzx-g" />
+  <script type="text/javascript" src="//static.hubspotqa.com/bundles/final_head.js?v=qBezGia0xGY_fG12KPR2kQ"></script>
+  <link type="text/css" rel="stylesheet" href="//static.hubspotqa.com/bundles/ui_toolkit.css?v=qBih91aST6LIRE_mC7raKQ" />
+  <script type="text/javascript" language="javascript">
+    //<![CDATA[
+    hns('hubspot', {
+      server: {
+        env: 'qa'
+      },
+      portal: {
+        id: 53,
+        cmsPrimaryDomain: 'www.hubspotcmsqa.com',
+        appPrimaryDomain: 'www.hubspotqa.com',
+        
+        
+        betaTolerant: false
+      },
+      user: {
+        id: 6044,
+        firstName: 'Eliza',
+        lastName: 'Patient',
+        email: 'devteam@hubspot.com',
+        username: 'devteam@hubspot.com',
+        superUser: true
+      },
+      gates: {
+        
+        		js_edit_email_html: true
+      } 
+    });
+    //]]>
+  </script>
+
 </head>
-<body>
-    <div id="main">
-        <h2>The NTM Inbound Marketing Consultant</h2>
-        <div id="log">
-        Hello, my name is Eliza.  I'm an Inbound Marketing Consultant with HubSpot.
-        I'm glad you've recently purchased HubSpot. Can you tell me something about
-        your marketing goals?
+<body class="hsdmz css_feb23new css_gate_hsqa css_socialmedia_feed_edits_26b css_toolkitv2">
+  <div class="page">
+    <div class="app dimensions-960">
+      <div class="header">
+        <div class="tertiary">
         </div>
-            <form id="question">
-            <input type="text" id="q" size="60">
-            <br>
-            <input type="submit" value="Talk to HubSpot">
-        </form>
+        <h1 class="museo_sans">None To Many</h1>
+        <h2 class="museo_sans">Your Very Own IMC</h2>
+      </div>
+
+      <div id="log">
+
+       <div>Hello, my name is Eliza.  I'm an Inbound Marketing Consultant with HubSpot.
+        I'm glad you've recently purchased HubSpot. Can you tell me something about
+        your marketing goals?</div>
+
+      </div>
+      <form id="question">
+        <input type="text" id="q" size="60">
+        <a class="btn ui-button basic">
+          <span class="corner left"></span>
+          <span class="nested">
+            Talk to HubSpot
+          </span>
+          <span class="corner right"></span>
+        </a>
+      </form>
     </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-<script>
+  </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>
 var eliza = {
     appendMsg: function(speaker, message) {
         $('#log').append("<div><b>" + speaker + ":</b> " + message + "</div>");
@@ -44,11 +93,17 @@ var eliza = {
 };
 $(window).load(function() {
     $('#q').val('').focus();
+    $("#question .btn").click(function (evt) {
+        evt.preventDefault();
+        eliza.ask($('#q').val());
+        $('#q').val('');
+    });
     $("#question").submit(function (evt) {
         evt.preventDefault();
         eliza.ask($('#q').val());
         $('#q').val('');
     });
+
 });
 </script>
 </body>
