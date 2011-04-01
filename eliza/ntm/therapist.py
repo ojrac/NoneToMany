@@ -91,19 +91,25 @@ G_REFLECTIONS = {
 #   list of possible responses, with standard format strings
 #----------------------------------------------------------------------
 gPats = [
-    [".*Zarrella.*",
+    [".* Zarrella.*",
      ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
 
-    [".*Twitter.*",
+    [".* Twitter.*",
      ["Twitter can be a very important tool for inbound marketing if it's not overused.  Can you describe your current social strategy?"]],
     
-    [".*Facebook.*",
+    [".* Facebook.*",
      ["Facebook can be a very important tool for inbound marketing if it's not overused.  Can you describe your current social strategy?"]],
 
     [".* email grader.*",
      ["Email grader is currently our top priority.  How might you use it?"]],
 
-    ["How do I (.*)", ["There's no one right way to do anything.  For instance, how do you generate leads now?"]],
+    ["How do I (.*)",
+    [
+        "My goal is to teach you to do this by yourself.",
+        "There's no one right way to do anything.  For instance, how do you generate leads now?"]],
+
+    [".* help.*",
+    [   "Over 98% of calls that come in to Support are picked up by a Human.  It's a great resource and I really encourage you to take advantage of it."]
     
     ["I need (.*)",
     [   "Have you tried creating %s yourself with your APIs?",
@@ -136,7 +142,14 @@ gPats = [
     
     [".*marketing kit.*",
         ["What did you think of our marketing kit?"]],
+
+    [".* leads.*",
+    [   "You have to include multiple conversion opportunities in your marketing machine.  At HubSpot we generate leads from MANY sources including organic search, ppc, blog, graders and email."],
     
+    [".* link.*",
+    [   "Your link building strategy should start with a content creation strategy.  People aren't going to want to link to uninteresting content.  Remember the line from Field of Dreams...  \"If you build it, they will come\".",
+        "You aren't trying to rank for 'click here.'  So remember the importance of keyword friendly anchor text in links throughout your site."],
+
     ["I'm not sure my portal has enough capacity.",
       ["That's what she said."]],
 
@@ -176,6 +189,7 @@ gPats = [
     
     [".*blog.*",
     [   "Tell me more about your experience with blogging.",
+        "The HubSpot blog generates over 900 leads/month, but we didn't get their overnight.  Blogging really can be a lead generator for you!",
         "When you think of a blog, what comes to mind?"]],
     
     ["Yes",
@@ -191,6 +205,21 @@ gPats = [
     ["It is (.*)",
     [   "You seem very certain.",
         "If I told you that it probably isn't %s, what would you feel?"]],
+
+    [".* beta.*",
+    [   "Fuck 'em. We're in beta!",
+        "PageGrader has been upgraded from beta to omega recently; does that help?"],
+
+    [".* dude.*",
+    [   "Dude?",
+        "Dude!",
+        "Dude!!!",
+        "Dude...",
+        "Dude?!",
+        "Dude."],
+
+    ["Are you the optimizer?",
+    [   "Yes."]],
     
     ["Can you (.*)",
     [   "%s is much easier with an inbound methodology, don't you think?",
@@ -256,6 +285,7 @@ gPats = [
         
     ["Why (.*)",
     [   "Why don't you tell me the reason why %s?",
+        "You can have the most beautiful website in the world but if you don't optimize and promote it then it will go to waste.",
         "Why do you think %s?" ]],
 
     ["Are you a computer?",
@@ -298,6 +328,7 @@ gPats = [
 
     [r"(.*)\?",
     [   "Why do you ask that?",
+        "That is a great question that we will cover in another consulting session, but we really need to stay focused for today.",
         "Please consider whether you can answer your own question.",
         "Have you tried to answer your question in our extensive documentation?"]],
 
@@ -311,6 +342,7 @@ gPats = [
         "Let's change the subject. How do you reach your target customers?",
         "Can you elaborate on that?",
         "Why do you say '%s'?",
+        "It's impossible to tell.",
         "I see.",
         "Very interesting.",
         "You might like to attend one of our group demos.",
