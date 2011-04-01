@@ -194,7 +194,7 @@ gPats = [
     
     ["Can you (.*)",
     [   "%s is much easier with an inbound methodology, don't you think?",
-        "I can't %s for you, but have you checked on http://services.hubspot.com/?"]],
+        "I can't %s for you, but have you checked on http://services.hubspot.com?"]],
     
     ["Can I (.*)",
     [   "Perhaps you don't want to %s.",
@@ -212,7 +212,7 @@ gPats = [
 
     ["I don't know (.*)",
     [   "Closed loop marketing could help you %s.  What is your experience level with it?",
-        "Have you looked at docs.hubapi.com?"]],
+        "Have you looked at http://docs.hubapi.com/?"]],
     
     ["I don't (.*)",
     [   "Don't you really %s?",
@@ -271,6 +271,7 @@ gPats = [
     [   "What would it mean to you if you got %s?",
         "Why do you want %s?",
         "What would you do if you got %s?",
+        "You can always make that suggestion on http://ideas.hubspot.com/.",
         "If you got %s, then what would you do?"]],
 
     [".* bing.*",
@@ -305,7 +306,7 @@ gPats = [
         "Good-bye.",
         "Remember, only stupid people use outbound marketing.  Have a good day!"]],
 
-    [r"(.*)\.",
+    [r"(.*)\.?",
     [   "Please tell me more.",
         "Let's change the subject. How do you reach your target customers?",
         "Can you elaborate on that?",
@@ -316,16 +317,6 @@ gPats = [
         "%s?",
         "I see.  And what does that tell you?",
         "Let's attack this from another angle.  Do you blog?"]],
-    
-    ["(.*)",
-    [   "Please tell me more.",
-        "Let's change the subject. How do you reach your target customers?",
-        "Can you elaborate on that?",
-        "Why do you say that %s?",
-        "I see.",
-        "Very interesting.",
-        "You might like to attend one of our group demos.",
-        "Let's attack this from another angle.  Do you blog?"]]
     ]
 
 #----------------------------------------------------------------------
