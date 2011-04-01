@@ -91,6 +91,8 @@ G_REFLECTIONS = {
 #   list of possible responses, with standard format strings
 #----------------------------------------------------------------------
 gPats = [
+    [".*Zarrella.*",
+     ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
 
     [".*Twitter.*",
      ["Twitter can be a very important tool for inbound marketing if it's not overused.  Can you describe your current social strategy?"]],
@@ -100,6 +102,8 @@ gPats = [
 
     [".* email grader.*",
      ["Email grader is currently our top priority.  How might you use it?"]],
+
+    ["How do I (.*)", ["There's no one right way to do anything.  For instance, how do you generate leads now?"]],
     
     ["I need (.*)",
     [   "Have you tried creating %s yourself with your APIs?",
@@ -117,6 +121,8 @@ gPats = [
         "Who's really stopping you from %s?  HubSpot or your own feelings of being inferior to organizations with more marketing dollars?",
         "Have you considered using the HubSpot APIs?",
         "Have you really tried?"]],
+
+    ["Why hasn't anyone?", ["WHAT???  WHY HASN'T ANYONE DONE WHHHHAAATTTT?????"]],
     
     ["I can't (.*)",
     [   "What if you tried logging out and in again?",
@@ -197,35 +203,37 @@ gPats = [
     
     ["You are (.*)",
     [   "Why do you think I am %s?",
-        "Does it please you to think that I'm %s?",
-        "Perhaps you would like me to be %s.",
-        "Perhaps you're really talking about yourself?"]],
+        "It's not me--that's just how our inbound methodology works.  Have you tried it?"]],
     
     ["You're (.*)",
     [   "Why do you say I am %s?",
         "Why do you think I am %s?",
         "Are we talking about you, or me?"]],
+
+    ["I don't know (.*)",
+    [   "Closed loop marketing could help you %s.  What is your experience level with it?",
+        "Have you looked at docs.hubapi.com?"]],
     
     ["I don't (.*)",
     [   "Don't you really %s?",
         "Why don't you %s?",
-        "Do you want to %s?"]],
+        "Do you want to %s?",
+        "You don't have to, but we see more success with total commitment.  Do you want to succeed?"]],
     
     ["I feel (.*)",
-    [   "Good, tell me more about these feelings.",
-        "Do you often feel %s?",
-        "When do you usually feel %s?",
-        "When you feel %s, what do you do?"]],
+    [   "Have you blogged about these feelings?  It could generate leads.",
+        "If that's how you feel, you should tweet it.",
+        "There are no right or wrong ways to feel about marketing, but I hope you're backing this up with data from our analytics modules."]],
     
     ["I have (.*)",
-    [   "Why do you tell me that you've %s?",
-        "Have you really %s?",
+    [   "Do you think that %s will generate leads for your business?",
+        "Is there a way to do less with that, and get more?",
         "Now that you have %s, what will you do next?"]],
     
     ["I would (.*)",
     [   "Could you explain why you would %s?",
         "Why would you %s?",
-        "Who else knows that you would %s?"]],
+        "Who else knows that you would %s?  If you blogged about it, everyone would know."]],
     
     ["Is there (.*)",
     [   "Do you think there is %s?",
@@ -244,8 +252,7 @@ gPats = [
     
     ["You (.*)",
     [   "We should be discussing you, not me.",
-        "Why do you say that about me?",
-        "Why do you care whether I %s?"]],
+        "Why do you say that about me?"]],
         
     ["Why (.*)",
     [   "Why don't you tell me the reason why %s?",
@@ -288,10 +295,7 @@ gPats = [
     ["I am interested in (.*)\.",
      ["Have you considered attending one of our webinars on the science of %s?"]],
 
-    [".*Zarrella.*",
-     ["Did you know that before becoming a social scientist, Dan Zarrella trained dolphins to train dogs?  True story."]],
-
-    ["(.*)\?",
+    [r"(.*)\?",
     [   "Why do you ask that?",
         "Please consider whether you can answer your own question.",
         "Have you tried to answer your question in our extensive documentation?"]],
@@ -311,7 +315,7 @@ gPats = [
         "You might like to attend one of our group demos.",
         "%s?",
         "I see.  And what does that tell you?",
-        "Let's attach this from another angle.  Do you blog?"]],
+        "Let's attack this from another angle.  Do you blog?"]],
     
     ["(.*)",
     [   "Please tell me more.",
@@ -321,7 +325,7 @@ gPats = [
         "I see.",
         "Very interesting.",
         "You might like to attend one of our group demos.",
-        "Let's attach this from another angel.  Do you blog?"]]
+        "Let's attack this from another angle.  Do you blog?"]]
     ]
 
 #----------------------------------------------------------------------
