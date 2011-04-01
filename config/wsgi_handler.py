@@ -1,6 +1,8 @@
 import os
 import site
 import sys
+site.addsitedir('/usr/share/hubspot/webapps/eliza')
+site.addsitedir('/usr/share/hubspot/webapps/eliza/eliza')
 paths = ('/usr/share/hubspot/webapps/eliza')
 for path in paths:
     if path not in sys.path:
